@@ -1,0 +1,22 @@
+{
+  "Admin": [
+    {
+      "id": "47e9",
+      "name": "loffy",
+      "email": "loffy@gmail.com",
+      "password": "4321"
+    },
+    {
+      "id": "2790",
+      "name": "qa",
+      "email": "a",
+      "password": "123"
+    },
+    {
+      "id": "39d2",
+      "name": "kavin",
+      "email": "kavin@gmail.com",
+      "password": "12345"
+    }
+  ]
+}

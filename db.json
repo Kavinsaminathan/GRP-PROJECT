@@ -1,0 +1,73 @@
+{
+  "user": [
+    {
+      "id": "9cff",
+      "study": "PRE-KG",
+      "age": "3",
+      "languages": "english",
+      "fees": "10000",
+      "edumod": "matric",
+      "duration": ""
+    },
+    {
+      "id": "3d04",
+      "study": "PRE-KG",
+      "age": "3",
+      "languages": "hindi",
+      "fees": "12000",
+      "edumod": "matric",
+      "duration": ""
+    },
+    {
+      "id": "55e9",
+      "study": "PRE-KG",
+      "age": "3",
+      "languages": "malayalam",
+      "fees": "14000",
+      "edumod": "matric",
+      "duration": ""
+    },
+    {
+      "id": "1995",
+      "study": "PRE-KG",
+      "age": "3",
+      "languages": "Tamil",
+      "fees": "15000",
+      "edumod": "matric",
+      "duration": ""
+    },
+    {
+      "id": "5587",
+      "study": "LKG",
+      "age": "4",
+      "languages": "english",
+      "fees": "10000",
+      "edumod": "cbse",
+      "duration": ""
+    },
+    {
+      "id": "b3b9",
+      "name": "kavin",
+      "email": "kavin@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "47e9",
+      "name": "loffy",
+      "email": "loffy@gmail.com",
+      "password": "4321"
+    },
+    {
+      "id": "a394",
+      "name": "loffy",
+      "email": "loffy@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "45b1",
+      "name": "aaa",
+      "email": "aa@d.n",
+      "password": "123"
+    }
+  ]
+}
