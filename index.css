@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.header-nav{
+  background-color:lightblue;
+  padding: 16px 32px;
+}
+.header-nav a{
+  color:white;
+  margin-right: 16px;
+  text-decoration: none;
+}
+.header-nav a.active{
+   font-weight: 700;
+   background-color:gray;
+   padding: 10px;
+}
+.cards{
+  width: 1000px;
+  column-count: 4;
+padding: 10px;
+margin-left: 50px;
+margin: 10PX;
+
+}
+.card{
+  height:450px;
+}
+
+/* .videos{
+  border: 24px solid gray;
+  width: 700px;
+  height:300px;
+  margin-left: 20px;
+} */
+.content{
+  column-count: 2;
+  height:800px;
+  width: 100vw;
+
+}
+.text1{
+  width:600px;
+  align-content:start;
+  border: 1px solid gray;
+  background-color: lightgray;
+  height: 310px;
+  padding-top: 10px;
+}
+.image1{
+  /* background-image: url('https://www.british-school.org/wp-content/uploads/2024/01/bg-360tour.webp'); */
+  height:100vh;
+
+  background-repeat: no-repeat;
+  /* background-position: cover; */
+  color:blueviolet;
+
+}
+
