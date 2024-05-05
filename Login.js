@@ -1,46 +1,32 @@
-import React, { useEffect, useState } from 'react'
-import { useAuth } from './Auth'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-export default function Login() {
-    const[userlist,setUserlist]=useState([])
-    const[email,setEmail]=useState('')
-     const[password,setPassword]=useState('')
-     const[errormessage,setErrormessage]=useState('')
-     const auth=useAuth()
-     const navigate=useNavigate()
-     useEffect(()=>{
-        axios.get('http://localhost:3002/Admin')
-        .then(res=>setUserlist(res.data))
-        
-     },[])
-     const handleLogin=(e)=>{
-        e.preventDefault()
-        const user=userlist.find(x=>x.email===email)
-        if(user){
-            if(user.password===password){
-                auth.login(user.name)
-                navigate('/')
-            }
-            else{
-                setErrormessage("Incorrect Password")
-            }
-        }
-        else{
-            setErrormessage("user Not Found")
-        }
-     }
+function Login() {
   return (
     <div>
-      <form onSubmit={handleLogin}>
-       <label>Email :</label>
-       <input type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}}/><br/><br/>
-       <label>Password :</label>
-       <input type="text" value={password} onChange={(e)=>{setPassword(e.target.value)}}/><br/><br/>
-       <button type='submit'>Login</button>
-       </form>
-       {errormessage}
+      <section className='sign-in'>
+        <div className='container mt-5'>
+          <div className='signin-content'>
+            <div className='signin-image'>
+              <figure>
+                <img/>
+              </figure>
+              <NavLink to='/signup' className='signup-image-link'>Create an Account</NavLink>
+            </div>
+
+            <div className='signin-form'>
+              <h2 className='form-title'>Sign up</h2>
+              <form className='register-form' id='register-form'>
+
+                
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
+
+export default Login
