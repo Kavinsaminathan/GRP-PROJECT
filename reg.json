@@ -1,0 +1,34 @@
+{
+  "Register": [
+    {
+      "id": "99c4",
+      "fname": "djsad",
+      "lname": "jbksdabclk",
+      "dob": "1332-12-03",
+      "fatherName": "dasmjcspk",
+      "motherName": "dnjswhdkl",
+      "email": "siva@.com",
+      "number": "1234567890",
+      "gender": "",
+      "address": "fcs",
+      "course": "",
+      "activity": "",
+      "language": ""
+    },
+    {
+      "id": "1fef",
+      "fname": "sssss",
+      "lname": "AASSA",
+      "dob": "1995-12-03",
+      "fatherName": "SAC",
+      "motherName": "SZXA",
+      "email": "SIVA@.C",
+      "number": "1234567890",
+      "gender": "FEMALE",
+      "address": "GHHGG",
+      "course": "LKG",
+      "activity": "SINGING",
+      "language": "HINDI"
+    }
+  ]
+}
