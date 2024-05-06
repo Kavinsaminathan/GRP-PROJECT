@@ -1,169 +1,107 @@
-import React from "react";
+import axios from 'axios'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function Signup() {
+function Signup() {
+  const [fname,setFname]=useState('')
+  const [lname,setLname]=useState('')
+  const [dob,setDob]=useState('')
+  const [fatherName,setFatherName]=useState('')
+  const [motherName,setMotherName]=useState('')
+  const [email,setEmail]=useState('')
+  const [number,setNumber]=useState('')
+  const [gender,setGenter]=useState('')
+  const [address,setAddress]=useState('')
+  const [course,setCourse]=useState('')
+  const [activity,setActivity]=useState('')
+  const [language,setLanguage]=useState('')
+  const navigate = useNavigate()
+  const handleSubmit=(e)=>{
+    axios.post('http://localhost:3002/user',{fname,lname,dob,fatherName,motherName,email,number,gender,address,course,activity,language})
+    .then(res=>{console.log(res)})
+    .catch(err=>{console.log(err)})
+    navigate('/Products')
+  }
+
   return (
-    <div>
-      <section>
-        <div className="signup">
-          <div className="container mt-5">
-            <div className="signup-content">
-              <div className="signup-form">
-                <h2 className="form-title">signup</h2>
-                <form className="register-form" id="register-form">
-                  <div className="form-group">
-                    <label htmlFor="firestname">
-                      <i class="zmdi zmdi-account"></i>
-                    </label>
-                    <input
-                      type="text"
-                      name="firestname"
-                      id="firestname"
-                      autoComplete="off"
-                      placeholder="firest name"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor=" lastname">
-                      <i class="zmdi zmdi-account"></i>
-                    </label>
-                    <input
-                      type="text"
-                      name="last name"
-                      id="lastname"
-                      autoComplete="off"
-                      placeholder="last name"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor=" gender">
-                      <i class="zmdi zmdi-account"></i>
-                    </label>
-                    <input type="radio" id="MALE" name="GENDER" value="HTML" />
-  <label for="html">MALE</label><br/>
-  <input type="radio" id="FEMALE" name="GENDER" value="CSS"/>
-  <label for="FEMALE">FEMALE</label><br/>
+   <div>
+    <fieldset style={{width: '100%'}}>
+     <form style={{width: '100%'}} onSubmit={handleSubmit}>
+        <table className='Adm-table'>
+            <tr>
+                <td>FIRST NAME</td>
+                <td><input maxlength="10" value={fname} type="text" onChange={(e)=>setFname(e.target.value)}/>(Max 30 charactera a-z and A-Z)</td>
+            </tr>
+            <tr>
+                <td>LAST NAME</td>
+                <td><input type="text" value={lname} onChange={(e)=>setLname(e.target.value)}/>(Max 30 charactera a-z and A-Z)</td>
+            </tr>
+            <tr>
+                <td>DATE OF BIRTH</td>
+                <td><input type="date" value={dob} onChange={(e)=>setDob(e.target.value)}/></td>
+            </tr>
+            <tr>
+                <td>FATHER NAME</td>
+                <td><input type="text" value={fatherName} onChange={(e)=>setFatherName(e.target.value)}/>(Max 30 charactera a-z and A-Z)</td>
+            </tr>
+            <tr>
+                <td>MOTHER NAME</td>
+                <td><input type="text" value={motherName} onChange={(e)=>setMotherName(e.target.value)}/>(Max 30 charactera a-z and A-Z)</td>
+            </tr>
+            <tr>
+                <td>EMAIL ID</td>
+                <td><input type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/></td>
+            </tr>
+            <tr>
+                <td>MOBILE NUMBER</td>
+                <td><input type="number" value={number} onChange={(e)=>setNumber(e.target.value)}/>(10 digit number)</td>
+            </tr>
+            <tr>
+                <td>GENTER</td>
+                <td><input type="radio" name="genter" value={gender} onChange={(e)=>setGenter(e.target.value)}/>male
+                    <input type="radio" name="genter" value={gender} onChange={(e)=>setGenter(e.target.value)}/>female
+                </td>
+            </tr>
+            <tr>
+                <td>ADDRESS</td>
+                <td><textarea name="" id="" cols="30" rows="3" value={address} onChange={(e)=>setAddress(e.target.value)}></textarea></td>
+            </tr>
+            <tr>
+                <td>COURSE FOR</td>
+                <td><input type="checkbox" name="hobbies" value={course} onChange={(e)=>setCourse(e.target.value)}/>PRE-KG
+                    <input type="checkbox" name="hobbies" value={course} onChange={(e)=>setCourse(e.target.value)}/> LKG
+                    <input type="checkbox" name="hobbies" value={course} onChange={(e)=>setCourse(e.target.value)}/>UKG
+                </td>
+            </tr>
+            <tr>
+                <td>EXTRA ACTIVITIS</td>
+                <td><input type="checkbox" name="hobbies" value={activity} onChange={(e)=>setActivity(e.target.value)}/>Drawing
+                    <input type="checkbox" name="hobbies" value={activity} onChange={(e)=>setActivity(e.target.value)}/> Singing
+                    <input type="checkbox" name="hobbies" value={activity} onChange={(e)=>setActivity(e.target.value)}/>Dancing
+                    <input type="checkbox" name="hobbies" value={activity} onChange={(e)=>setActivity(e.target.value)}/> Sketching
+                    <input type="checkbox" name="hobbies" value={activity} onChange={(e)=>setActivity(e.target.value)}/>Others
+                </td>
+            </tr>
+            <tr>
+                <td>LANGUAGE</td>
+                <td style={{padding: '20px'}}><input type="radio" value={fname}/>Tamil
+                    <input type="radio" name="course" value={fname} onChange={(e)=>setLanguage(e.target.value)}/>English
+                    <input type="radio" name="course" value={fname} onChange={(e)=>setLanguage(e.target.value)}/>Hindi
+                    <input type="radio" name="course" value={fname} onChange={(e)=>setLanguage(e.target.value)}/>Malayalam
+                </td>
+            </tr>
+            <tr>
+                {/* <td></td> */}
+                <td colSpan="2">
+                    <center><input type="submit" style={{marginLeft:'40px'}}/><input type="reset" style={{marginLeft:'40px'}}/></center>
+                </td>
+            </tr>
+        </table>
+    </form>
 
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="date of birth">
-                    <i class="zmdi zmdi-calendar"></i>
-
-                    </label>
-                    <input
-                      type="date"
-                      name="date of birth"
-                      id="date of birth"
-                      autoComplete="off"
-                      placeholder="date of birth"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="ADDRESS">
-                    <i class="zmdi zmdi-email"></i>
-                    </label>
-                    <input
-                      type="text"
-                      name="ADDRESS"
-                      id="address"
-                      autoComplete="off"
-                      placeholder="ADDRESS"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="father name">
-                    <i class="zmdi zmdi-email"></i>
-                    </label>
-                    <input
-                      type="email"
-                      name="father name"
-                      id="father name"
-                      autoComplete="off"
-                      placeholder="enter father name"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="fatheremail">
-                    <i class="zmdi zmdi-email"></i>
-                    </label>
-                    <input
-                      type="email"
-                      name="fatheremail"
-                      id="fatheremail"
-                      autoComplete="off"
-                      placeholder="father email"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="mother name">
-                    <i class="zmdi zmdi-email"></i>
-                    </label>
-                    <input
-                      type="email"
-                      name="mother name"
-                      id="mother name"
-                      autoComplete="off"
-                      placeholder="enter mother name"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="phone">
-                    <i class="zmdi zmdi-phone"></i> </label>
-                    <input
-                      type="TEXT"
-                      name="number"
-                      id="name"
-                      autoComplete="off"
-                      placeholder="PHONE NUMBER"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="EXTRA ACTIVITES">
-
-                    <i class="zmdi zmdi-account-calendar"></i>  
-                    </label>
-                    <input
-                      type="text"
-                      name="EXTRA ACITIVIES"
-                      id="EXTRA ACITIVIES"
-                      autoComplete="off"
-                      placeholder="EXTRA ACTIVITIES"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="password">
-                    <i class="zmdi zmdi-account-calendar"></i>
-
-                    </label>
-                    <input
-                      type="text"
-                      name="password"
-                      id="Password"
-                      autoComplete="off"
-                      placeholder="your password"
-                    ></input>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="name">
-                      <i class="zmdi zmdi-account"></i>
-                    </label>
-                    <input
-                      type="text"
-                      name="conform password"
-                      id="conform"
-                      autoComplete="off"
-                      placeholder="your conform password"
-                    ></input>
-                  </div>
-                  <div className="form-group form-button">
-                    <button>Register</button>
-                  </div>
-                 
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+    </fieldset>
+   </div>
+  )
 }
+
+export default Signup
